@@ -1,6 +1,9 @@
 // Import
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Manager = require('./lib/managerClass');
+const Engineer = require('./lib/engineerClass');
+const Intern = require('./lib/internClass');
 
 // Variables
 var managerQuestions = ['What is the manager\'s name?', 'What is the manager\'s employee ID?', 'What is the manager\'s email address?', 'What is the manager\'s office number?'];
@@ -9,70 +12,6 @@ var internQuestions = ['What is the intern\'s name?', 'What is the intern\'s emp
 
 var employeeSelection = '';
 var newEmployee;
-
-// Classes
-class Employee {
-  constructor(employeeName, employeeID, employeeEmail){
-    this.employeeName = employeeName;
-    this.employeeID = employeeID;
-    this.employeeEmail = employeeEmail;
-  }
-
-  getName(){
-    return this.employeeName;
-  }
-  getID(){
-    return this.employeeID;
-  }
-  getEmail(){
-    return this.employeeEmail;
-  }
-  getRole(){
-    return 'Employee';
-  }
-}
-
-module.exports = Employee;
-
-// Sub-Classes
-class Manager extends Employee {
-  constructor(employeeName, employeeID, employeeEmail, officeNumber){
-    super(employeeName, employeeID, employeeEmail);
-    this.officeNumber = officeNumber;
-  }
-  getOfficeNumber(){
-    return this.officeNumber;
-  }
-  getRole(){
-    return 'Manager';
-  }
-}
-
-class Engineer extends Employee {
-  constructor(employeeName, employeeID, employeeEmail, github){
-    super(employeeName, employeeID, employeeEmail);
-    this.github = github;
-  }
-  getGithub(){
-    return this.github
-  }
-  getRole(){
-    return 'Engineer';
-  }
-}
-
-class Intern extends Employee {
-  constructor(employeeName, employeeID, employeeEmail, school){
-    super(employeeName, employeeID, employeeEmail);
-    this.school = school;
-  }
-  getSchool(){
-    return this.school
-  }
-  getRole(){
-    return 'Intern';
-  }
-}
 
 // HTML Skeleton
 var htmlSkeletonStart = `

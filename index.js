@@ -39,7 +39,7 @@ var htmlSkeletonEnd = `
 `
 // Functions
 function createHTML(data) {
-    fs.writeFile('index.html', data, (err) =>
+    fs.writeFile('./dist/index.html', data, (err) =>
       err ? console.log(err) : console.log('Congratulations, your HTML file was successfully created')
     );
 }
@@ -53,7 +53,7 @@ function appendEmployeeCard() {
             </div>
             <div class = 'cardBottom flex'>
                 <p>ID: ${newEmployee.getID()}</p>
-                <p>E-mail:<a href="mailto:${newEmployee.getEmail()}"> ${newEmployee.getEmail()}</a></p>
+                <p>E-mail: <a href="mailto:${newEmployee.getEmail()}">${newEmployee.getEmail()}</a></p>
 ${appendEmployeeSpecific()}
             </div>
         </div>

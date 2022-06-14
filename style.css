@@ -21,21 +21,30 @@
     font-size: 325%;
 }
 
+#teamBox {
+    margin: 2% 15% 0 15%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .employeeCard {
-    border: solid black 5px;
+    border: solid black 4px;
     border-radius: 4px;
     margin: 2%;
-    height: 400px;
-    width: 200px;
+    height: 300px;
+    width: 28%;
     flex-flow: column;
 }
 
 .cardTop {
-    margin-top: 5%;
+    padding: 3% 0 3% 2%;
     flex-flow: column;
+    background-color: #0096FF;
+    border-bottom: solid black 3px;
 }
 
 .cardBottom {
-    margin-top: 20%;
+    font-size: 120%;
+    padding: 5% 0 0 2%;
     flex-flow: column;
 }

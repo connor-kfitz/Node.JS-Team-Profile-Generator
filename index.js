@@ -30,8 +30,10 @@ var htmlSkeletonStart = `
     </div>
 </header>
 <body>
+  <div class="flex" id="teamBox">
 `
 var htmlSkeletonEnd = `  
+  </div>
 </body>
 </html>
 `
@@ -44,7 +46,6 @@ function createHTML(data) {
 
 function appendEmployeeCard() {
   var htmlEmployeeCard = `
-    <div class="flex">
         <div class = 'employeeCard flex'>
             <div class = 'cardTop flex'>
                 <h1>${newEmployee.getName()}</h1>
@@ -52,11 +53,10 @@ function appendEmployeeCard() {
             </div>
             <div class = 'cardBottom flex'>
                 <p>ID: ${newEmployee.getID()}</p>
-                <p>E-mail: ${newEmployee.getEmail()}</p>
+                <p>E-mail:<a href="mailto:${newEmployee.getEmail()}"> ${newEmployee.getEmail()}</a></p>
 ${appendEmployeeSpecific()}
             </div>
         </div>
-    </div>
 `;
 
 htmlSkeletonStart += htmlEmployeeCard;
@@ -67,7 +67,7 @@ function appendEmployeeSpecific(){
     return (`                <p>Office Number: ${newEmployee.getOfficeNumber()}</p>`);
   }
   else if(newEmployee.getRole() == 'Engineer'){
-    return (`                <p>Github Link: ${newEmployee.getGithub()}</p>`);
+    return (`                <p>Github Link: <a href="${newEmployee.getGithub()}">${newEmployee.getGithub()}</a></p>`);
   }
   else if(newEmployee.getRole() == 'Intern'){
     return (`                <p>School: ${newEmployee.getSchool()}</p>`);
